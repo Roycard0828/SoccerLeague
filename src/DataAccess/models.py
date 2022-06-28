@@ -1,5 +1,5 @@
 from unicodedata import name
-from db import session, base
+from .db import session, base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
@@ -10,7 +10,6 @@ class Team(base):
     name = Column(String)
     manager = Column(String)
     field = Column(String)
-   
 
     def __init__(self, name, manager, field):
         self.name = name
@@ -36,8 +35,9 @@ class Match(base):
         self.visting_team_id = visiting_team_id
         self.field = field
 
+
 class PositionsTable(base):
-    __tablename__ = "positionstable"
+    __tablename__ = "positions_table"
     id = Column(Integer, primary_key=True)
     team_id = Column(Integer, ForeignKey('team.id'))
     matches_played = Column(Integer, default=0)

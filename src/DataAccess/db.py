@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import psycopg2
 
-from db_data_access import data_access
+from .db_data_access import data_access
 
 database_name = data_access['name']
 username = data_access['username']
