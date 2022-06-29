@@ -13,7 +13,7 @@ class TeamDao(GeneralDao):
         self.session.commit()
         return True
 
-    def readById(self, id: int):
+    def read_by_id(self, id: int):
         query = self.session.query(Team).get(id)
         return query
 
@@ -21,8 +21,8 @@ class TeamDao(GeneralDao):
         query = self.session.query(Team).order_by(Team.id.asc())
         return query
 
-    def updateById(self, id: int, *args):
-        team = self.session.query(Team).get(id)
+    def update(self, team: Team, *args):
+        team = team
         team.name = args[0]
         team.manager = args[1]
         team.field = args[2]

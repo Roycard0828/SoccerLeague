@@ -6,11 +6,11 @@ from abc import ABC, abstractmethod
 class GeneralDao(ABC):
 
     @abstractmethod
-    def save(self, object):
+    def save(self, obj):
         pass
 
     @abstractmethod
-    def readById(self, id: int):
+    def read_by_id(self, id: int):
         pass
 
     @abstractmethod
@@ -18,10 +18,10 @@ class GeneralDao(ABC):
         pass
 
     @abstractmethod
-    def updateById(self, id: int, *args):
+    def update(self, obj, *args):
         pass
 
     @abstractmethod
-    def delete(self, object):
+    def delete(self, obj):
         pass
     

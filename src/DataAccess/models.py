@@ -29,10 +29,10 @@ class Match(base):
     local_team = relationship('Team', foreign_keys=[local_team_id])
     visiting_team = relationship('Team', foreign_keys=[visting_team_id])
 
-    def __init__(self, day_number, local_team_id: int, visiting_team_id: int, field):
+    def __init__(self, day_number, local_team: Team, visiting_team: Team, field):
         self.day_number = day_number
-        self.local_team_id = local_team_id
-        self.visting_team_id = visiting_team_id
+        self.local_team = local_team
+        self.visiting_team = visiting_team
         self.field = field
 
 
