@@ -11,7 +11,7 @@ class Team(base):
     manager = Column(String)
     field = Column(String)
 
-    def __init__(self, name, manager, field):
+    def __init__(self, name: str, manager: str, field: str):
         self.name = name
         self.manager = manager
         self.field = field
