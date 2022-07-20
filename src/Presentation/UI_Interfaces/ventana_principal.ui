@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>846</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="PrincipalFrame">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QFrame" name="TitutloFrame">
+         <property name="styleSheet">
+          <string notr="true">background-color: white;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="Liga">
+            <property name="font">
+             <font>
+              <family>Noto Sans Mono SemiBold</family>
+              <pointsize>26</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black;</string>
+            </property>
+            <property name="text">
+             <string>Liga de futbol.</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="General">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 247, 247);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="Barra">
+            <property name="styleSheet">
+             <string notr="true">QFrame{background-color: rgb(42, 48, 81);}
+
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color:balck;
+}
+
+QPushButton{
+	background-color: rgb(42, 48, 81);
+	border-radius:8px;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="1" column="1">
+              <widget class="QPushButton" name="BtnTabla">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Noto Sans Mono SemiBold</family>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="text">
+                <string>Tabla General</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="BtnEquipo">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Noto Sans Mono SemiBold</family>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="text">
+                <string>Equipos</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="BtnJornada">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Noto Sans Mono SemiBold</family>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Jornada</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="Contenido">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QStackedWidget" name="stackedWidget">
+               <property name="currentIndex">
+                <number>2</number>
+               </property>
+               <widget class="QWidget" name="PaginaEquipos">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0">
+                 <item>
+                  <widget class="QFrame" name="TituloEquipos">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QLabel" name="label">
+                    <property name="geometry">
+                     <rect>
+                      <x>40</x>
+                      <y>40</y>
+                      <width>151</width>
+                      <height>61</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <pointsize>24</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:gray;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Equipos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QFrame" name="ContEquipos">
+                    <property name="geometry">
+                     <rect>
+                      <x>1</x>
+                      <y>100</y>
+                      <width>1081</width>
+                      <height>611</height>
+                     </rect>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <widget class="QLabel" name="label_2">
+                     <property name="geometry">
+                      <rect>
+                       <x>20</x>
+                       <y>50</y>
+                       <width>81</width>
+                       <height>41</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:black;</string>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Nombre&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_3">
+                     <property name="geometry">
+                      <rect>
+                       <x>300</x>
+                       <y>60</y>
+                       <width>111</width>
+                       <height>41</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:black;</string>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Representante&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                    <widget class="QLabel" name="label_4">
+                     <property name="geometry">
+                      <rect>
+                       <x>630</x>
+                       <y>60</y>
+                       <width>58</width>
+                       <height>18</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:balck;</string>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Campo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="BtnInsertar">
+                     <property name="geometry">
+                      <rect>
+                       <x>940</x>
+                       <y>50</y>
+                       <width>101</width>
+                       <height>51</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Noto Sans Mono SemiBold</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Insertar</string>
+                     </property>
+                    </widget>
+                    <widget class="QTextEdit" name="TxtNombreEquipo">
+                     <property name="geometry">
+                      <rect>
+                       <x>110</x>
+                       <y>60</y>
+                       <width>171</width>
+                       <height>31</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:black;</string>
+                     </property>
+                    </widget>
+                    <widget class="QTextEdit" name="TxtRepresentanteEquipo">
+                     <property name="geometry">
+                      <rect>
+                       <x>420</x>
+                       <y>60</y>
+                       <width>201</width>
+                       <height>31</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:black;</string>
+                     </property>
+                    </widget>
+                    <widget class="QTextEdit" name="TxtCampoEquipo">
+                     <property name="geometry">
+                      <rect>
+                       <x>690</x>
+                       <y>60</y>
+                       <width>191</width>
+                       <height>31</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:black;</string>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="BtnActualizar">
+                     <property name="geometry">
+                      <rect>
+                       <x>930</x>
+                       <y>220</y>
+                       <width>121</width>
+                       <height>51</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Noto Sans Mono SemiBold</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Actualizar</string>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="BtnBorrar">
+                     <property name="geometry">
+                      <rect>
+                       <x>940</x>
+                       <y>310</y>
+                       <width>101</width>
+                       <height>41</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Noto Sans Mono SemiBold</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	background-color: rgb(214, 44, 6);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Borrar</string>
+                     </property>
+                    </widget>
+                    <widget class="QTableWidget" name="tablaEquipos">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
+                     <property name="geometry">
+                      <rect>
+                       <x>20</x>
+                       <y>160</y>
+                       <width>861</width>
+                       <height>431</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">
+	color:balck;
+	font: 63 11pt &quot;Noto Sans Mono SemiBold&quot;;
+	text-align:center;
+	border-color_black</string>
+                     </property>
+                     <property name="rowCount">
+                      <number>0</number>
+                     </property>
+                     <attribute name="horizontalHeaderVisible">
+                      <bool>false</bool>
+                     </attribute>
+                     <attribute name="horizontalHeaderDefaultSectionSize">
+                      <number>220</number>
+                     </attribute>
+                     <column>
+                      <property name="text">
+                       <string>ID</string>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>9</pointsize>
+                       </font>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Nombre</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Representante</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Campo</string>
+                      </property>
+                     </column>
+                    </widget>
+                    <widget class="QPushButton" name="btnlistar">
+                     <property name="geometry">
+                      <rect>
+                       <x>950</x>
+                       <y>410</y>
+                       <width>91</width>
+                       <height>41</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>14</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Listar</string>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="BtnEmpezarTorneo">
+                     <property name="geometry">
+                      <rect>
+                       <x>920</x>
+                       <y>510</y>
+                       <width>151</width>
+                       <height>51</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Noto Sans Mono SemiBold</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	background-color:  rgb(43, 98, 180);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Empezar Torneo</string>
+                     </property>
+                    </widget>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="PaginaTabla">
+                <property name="styleSheet">
+                 <string notr="true">QFrame{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_4" stretch="2,8">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="TituloTabla">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QLabel" name="label_5">
+                    <property name="geometry">
+                     <rect>
+                      <x>20</x>
+                      <y>50</y>
+                      <width>281</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:gray;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Tabla General&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="ContenidoTabla">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QTableWidget" name="TablaGeneral">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>20</y>
+                      <width>1091</width>
+                      <height>551</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">	color:balck;
+	font: 63 11pt &quot;Noto Sans Mono SemiBold&quot;;
+	text-align:center;
+	border-color_black</string>
+                    </property>
+                    <column>
+                     <property name="text">
+                      <string>Equipo</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PJ</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PP</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PE</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PG</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Goles</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Puntos</string>
+                     </property>
+                    </column>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="PaginaJornada">
+                <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,8">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QWidget" name="Titulo" native="true">
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:white;
+border-color: rgb(125, 125, 125);</string>
+                   </property>
+                   <widget class="QLabel" name="TituloJornada">
+                    <property name="geometry">
+                     <rect>
+                      <x>50</x>
+                      <y>50</y>
+                      <width>151</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:gray;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Jornada&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QPushButton" name="BtnBuscarJornada">
+                    <property name="geometry">
+                     <rect>
+                      <x>980</x>
+                      <y>60</y>
+                      <width>91</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Buscar</string>
+                    </property>
+                   </widget>
+                   <widget class="QSpinBox" name="NumJornada">
+                    <property name="geometry">
+                     <rect>
+                      <x>830</x>
+                      <y>60</y>
+                      <width>71</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="ContJornada" native="true">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:white;</string>
+                   </property>
+                   <widget class="QTableWidget" name="TablaPartidos">
+                    <property name="geometry">
+                     <rect>
+                      <x>40</x>
+                      <y>110</y>
+                      <width>1031</width>
+                      <height>371</height>
+                     </rect>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">	color:balck;
+	font: 63 11pt &quot;Noto Sans Mono SemiBold&quot;;
+	text-align:center;
+	border-color_black</string>
+                    </property>
+                    <property name="showGrid">
+                     <bool>true</bool>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                    <attribute name="horizontalHeaderVisible">
+                     <bool>true</bool>
+                    </attribute>
+                    <attribute name="horizontalHeaderCascadingSectionResizes">
+                     <bool>false</bool>
+                    </attribute>
+                    <attribute name="horizontalHeaderHighlightSections">
+                     <bool>true</bool>
+                    </attribute>
+                    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                     <bool>true</bool>
+                    </attribute>
+                    <attribute name="verticalHeaderVisible">
+                     <bool>true</bool>
+                    </attribute>
+                    <column>
+                     <property name="text">
+                      <string>Local</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Visitante</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Campo</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Resultado</string>
+                     </property>
+                    </column>
+                   </widget>
+                   <widget class="QPushButton" name="BtnAsignarResultado">
+                    <property name="geometry">
+                     <rect>
+                      <x>980</x>
+                      <y>50</y>
+                      <width>88</width>
+                      <height>34</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Asignar</string>
+                    </property>
+                   </widget>
+                   <widget class="QTextEdit" name="TxtResultado">
+                    <property name="geometry">
+                     <rect>
+                      <x>770</x>
+                      <y>50</y>
+                      <width>151</width>
+                      <height>31</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_6">
+                    <property name="geometry">
+                     <rect>
+                      <x>640</x>
+                      <y>50</y>
+                      <width>101</width>
+                      <height>31</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Resultado: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QPushButton" name="BtnActualizarDatos">
+                    <property name="geometry">
+                     <rect>
+                      <x>870</x>
+                      <y>510</y>
+                      <width>201</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Actualizar datos</string>
+                    </property>
+                   </widget>
+                   <widget class="QPushButton" name="BtnTerminarJornada">
+                    <property name="geometry">
+                     <rect>
+                      <x>40</x>
+                      <y>513</y>
+                      <width>191</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	
+	background-color: rgb(43, 98, 180);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Terminar Jornada</string>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
