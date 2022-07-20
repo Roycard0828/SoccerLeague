@@ -4,4 +4,5 @@ This project will has four iterations, each one with funcionality and specific d
 
 ## Iterations
 
-- Iteration 1: start -  
+- Iteration 1: start - finish  
+- Iteration 2: start - 
