@@ -1,12 +1,11 @@
 from DataAccess.team_dao import TeamDao
-from DataAccess.models import Team
+from DataAccess.match_dao import MatchDao
+from DataAccess.models import Team, Match
 from DataAccess import db
 
 
 def run():
-    team1 = Team('RealMadrid', 'Carletto', 'Bernabeu')
-    dao = TeamDao()
-    dao.save(team1)
+    pass
 
 
 if __name__ == '__main__':

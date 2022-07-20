@@ -1,7 +1,7 @@
 """ Class to make a connection with the DataAccess package """
 
-from src.DataAccess.factory_dao import FactoryTeamDao
-from src.DataAccess.models import Team
+from DataAccess.factory_dao import FactoryTeamDao
+from DataAccess.models import Team
 
 
 class ControllerTeam:
@@ -36,7 +36,7 @@ class ControllerTeam:
 
     @classmethod
     def get_all_teams(cls):
-        team_list = cls.dao.read_all()
+        team_list = list(cls.dao.read_all())
         return team_list
 
     @classmethod
