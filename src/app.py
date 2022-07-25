@@ -1,7 +1,7 @@
 from Presentation.ventana_principal import *
 from Presentation.ventana_actualizar import Ui_ActualizarWIndow
 from Presentation import mensaje_exitoso, mensaje_error_borrarEquipo
-from BusinessLogic.team_controller import ControllerTeam
+from BusinessLogic.team_controller import TeamController
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -41,13 +41,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         manager = str(self.TxtRepresentanteEquipo.toPlainText())
         field = str(self.TxtCampoEquipo.toPlainText())
 
-        ControllerTeam.add_team(name, manager, field)
+        TeamController.add_team(name, manager, field)
         self.successful_message_dialog()
 
     def delete_team(self):
         try:
             id = int(self.tablaEquipos.currentItem().text())
-            ControllerTeam.delete_team(id)
+            TeamController.delete_team(id)
             self.successful_message_dialog()
         except ValueError:
             self.error_message_dialog_for_id()
@@ -59,7 +59,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             manager = str(update_widget.TxtRepresentante.toPlainText())
             field = str(update_widget.TxtCampo.toPlainText())
 
-            ControllerTeam.update_team(id, name, manager, field)
+            TeamController.update_team(id, name, manager, field)
             self.widget.close()
         try:
             id = int(self.tablaEquipos.currentItem().text())
@@ -71,7 +71,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.error_message_dialog_for_id()
 
     def load_teams_table(self):
-        team_list = ControllerTeam.get_all_teams()
+        team_list = TeamController.get_all_teams()
         list_size = len(team_list)
         self.tablaEquipos.setRowCount(list_size)
         for i in range(0, list_size):

@@ -1,10 +1,10 @@
 """ Class to make a connection with the DataAccess package """
 
-from DataAccess.factory_dao import FactoryTeamDao
-from DataAccess.models import Team
+from ..DataAccess.factory_dao import FactoryTeamDao
+from ..DataAccess.models import Team
 
 
-class ControllerTeam:
+class TeamController:
 
     dao = FactoryTeamDao.create_entity()
 
