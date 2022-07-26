@@ -19,6 +19,6 @@ class FactoryTeamDao(EntityFactory):
 
 class FactoryMatchDao(EntityFactory):
 
-    @abstractmethod
-    def create_entity(self):
+    @classmethod
+    def create_entity(cls):
         return MatchDao()
