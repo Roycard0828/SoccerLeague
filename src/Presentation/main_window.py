@@ -3,6 +3,7 @@ from .ventana_actualizar import Ui_ActualizarWIndow
 from .mensaje_exitoso import Ui_Dialog_Success_Message
 from .mensaje_error_borrarEquipo import Ui_Dialog_Delete_Message
 from ..BusinessLogic.team_controller import TeamController
+from ..BusinessLogic.match_controller import MatchController
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -22,6 +23,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.BtnActualizar.clicked.connect(lambda: self.update_team())
         self.btnlistar.clicked.connect(lambda: self.load_teams_table())
         self.BtnBorrar.clicked.connect(lambda: self.delete_team())
+
+        # Match buttons
+        self.BtnBuscarJornada.clicked.connect(lambda: self.load_match_table())
+        self.BtnAsignarResultado.clicked.connect(lambda: self.write_result())
+        self.BtnActualizarDatos.clicked.connect(lambda: self.update_results())
 
     # General methods
     def successful_message_dialog(self):
@@ -84,3 +90,28 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.tablaEquipos.setItem(row, 3, QtWidgets.QTableWidgetItem(team_list[i].field))
 
         self.tablaEquipos.sortItems(0)
+
+    # Methods for match operations
+    def load_match_table(self):
+        soccer_day_number = int(self.NumJornada.text())
+        match_list = MatchController.get_all_matches_by_day_number(soccer_day_number)
+        self.TablaPartidos.setRowCount(len(match_list))
+        for i in range(0, len(match_list)):
+            self.TablaPartidos.setItem(i, 0, QtWidgets.QTableWidgetItem(match_list[i].local_team.name))
+            self.TablaPartidos.setItem(i, 1, QtWidgets.QTableWidgetItem(match_list[i].visiting_team.name))
+            self.TablaPartidos.setItem(i, 2, QtWidgets.QTableWidgetItem(match_list[i].field))
+            self.TablaPartidos.setItem(i, 3, QtWidgets.QTableWidgetItem(match_list[i].result))
+
+    def write_result(self):
+        result = self.TxtResultado.toPlainText()
+        self.TablaPartidos.currentItem().setText(result)
+
+    def update_results(self):
+        soccer_day_number = int(self.NumJornada.text())
+        match_list = MatchController.get_all_matches_by_day_number(soccer_day_number)
+        for i in range(0, len(match_list)):
+            id = match_list[i].id
+            result = self.TablaPartidos.item(i, 3).text()
+            MatchController.update_result(id, result)
+
+        self.successful_message_dialog()
