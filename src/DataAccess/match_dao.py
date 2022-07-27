@@ -37,3 +37,17 @@ class MatchDao(GeneralDao):
         self.session.delete(match)
         self.session.commit()
         return True
+
+    def read_by_day_number(self, day_number: int):
+        query = self.session.query(Match).filter(
+            Match.day_number == day_number
+        )
+        return query
+
+    def update_result(self, id: int, result: str):
+        match = self.session.query(Match).get(id)
+        match.result = result
+
+        self.session.add(match)
+        self.session.commit()
+        return True

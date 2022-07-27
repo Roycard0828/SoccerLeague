@@ -1,7 +1,8 @@
-from Presentation.ventana_principal import *
-from Presentation.ventana_actualizar import Ui_ActualizarWIndow
-from Presentation import mensaje_exitoso, mensaje_error_borrarEquipo
-from BusinessLogic.team_controller import ControllerTeam
+from .ventana_principal import *
+from .ventana_actualizar import Ui_ActualizarWIndow
+from .mensaje_exitoso import Ui_Dialog_Success_Message
+from .mensaje_error_borrarEquipo import Ui_Dialog_Delete_Message
+from ..BusinessLogic.team_controller import TeamController
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -24,13 +25,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     # General methods
     def successful_message_dialog(self):
-        successful_message = mensaje_exitoso.Ui_Dialog()
+        successful_message = Ui_Dialog_Success_Message()
         successful_message.setupUi(self.widget)
         self.widget.show()
         successful_message.pushButton.clicked.connect(lambda: self.widget.close())
 
     def error_message_dialog_for_id(self):
-        error_message = mensaje_error_borrarEquipo.Ui_Dialog()
+        error_message = Ui_Dialog_Delete_Message()
         error_message.setupUi(self.widget)
         self.widget.show()
         error_message.pushButton.clicked.connect(lambda: self.widget.close())
@@ -41,13 +42,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         manager = str(self.TxtRepresentanteEquipo.toPlainText())
         field = str(self.TxtCampoEquipo.toPlainText())
 
-        ControllerTeam.add_team(name, manager, field)
+        TeamController.add_team(name, manager, field)
         self.successful_message_dialog()
 
     def delete_team(self):
         try:
             id = int(self.tablaEquipos.currentItem().text())
-            ControllerTeam.delete_team(id)
+            TeamController.delete_team(id)
             self.successful_message_dialog()
         except ValueError:
             self.error_message_dialog_for_id()
@@ -59,7 +60,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             manager = str(update_widget.TxtRepresentante.toPlainText())
             field = str(update_widget.TxtCampo.toPlainText())
 
-            ControllerTeam.update_team(id, name, manager, field)
+            TeamController.update_team(id, name, manager, field)
             self.widget.close()
         try:
             id = int(self.tablaEquipos.currentItem().text())
@@ -71,7 +72,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.error_message_dialog_for_id()
 
     def load_teams_table(self):
-        team_list = ControllerTeam.get_all_teams()
+        team_list = TeamController.get_all_teams()
         list_size = len(team_list)
         self.tablaEquipos.setRowCount(list_size)
         for i in range(0, list_size):
@@ -83,10 +84,3 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.tablaEquipos.setItem(row, 3, QtWidgets.QTableWidgetItem(team_list[i].field))
 
         self.tablaEquipos.sortItems(0)
-
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication([])
-    window = MainWindow()
-    window.show()
-    app.exec_()
