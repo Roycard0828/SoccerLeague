@@ -13,7 +13,7 @@ class PositionsTableDao:
         return True
 
     def get_all(self):
-        query = self.session.query(PositionsTable).order_by(PositionsTable.puntos.desc())
+        query = self.session.query(PositionsTable).order_by(PositionsTable.points.desc())
         return query
 
     def get_team_by_id(self, team_id: int):

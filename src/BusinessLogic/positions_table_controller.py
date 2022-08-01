@@ -31,7 +31,8 @@ class PositionsTableController:
         set_new_data(local_team, data_local_team)
         set_new_data(visiting_team, data_visiting_team)
 
-    def read_all_teams(self):
+    @classmethod
+    def read_all_teams(cls):
         dao = FactoryPositionsTableDao.create_entity()
         team_list = dao.get_all()
         return list(team_list)
