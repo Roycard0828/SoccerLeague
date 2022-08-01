@@ -4,6 +4,8 @@ from .mensaje_exitoso import Ui_Dialog_Success_Message
 from .mensaje_error_borrarEquipo import Ui_Dialog_Delete_Message
 from ..BusinessLogic.team_controller import TeamController
 from ..BusinessLogic.match_controller import MatchController
+from ..BusinessLogic.positions_table_controller import PositionsTableController
+from ..BusinessLogic.positions_table_logic import start_season, end_soccer_day
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -12,6 +14,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
         self.widget = QtWidgets.QMainWindow()
+        self.load_positions_table()
 
         # Select page from the StackWidget
         self.BtnEquipo.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.PaginaEquipos))
@@ -28,6 +31,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.BtnBuscarJornada.clicked.connect(lambda: self.load_match_table())
         self.BtnAsignarResultado.clicked.connect(lambda: self.write_result())
         self.BtnActualizarDatos.clicked.connect(lambda: self.update_results())
+
+        # Start season buttons
+        self.BtnEmpezarTorneo.clicked.connect(lambda: self.start_season())
+        # End the soccer day
+        self.BtnTerminarJornada.clicked.connect(lambda: self.end_soccer_day())
 
     # General methods
     def successful_message_dialog(self):
@@ -115,3 +123,28 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             MatchController.update_result(id, result)
 
         self.successful_message_dialog()
+
+    # Positions table methods
+    def load_positions_table(self):
+        team_list = PositionsTableController.read_all_teams()
+        self.TablaGeneral.setRowCount(len(team_list))
+        for i in range(0, len(team_list)):
+            self.TablaGeneral.setItem(i, 0, QtWidgets.QTableWidgetItem(team_list[i].team.name))
+            self.TablaGeneral.setItem(i, 1, QtWidgets.QTableWidgetItem(str(team_list[i].matches_played)))
+            self.TablaGeneral.setItem(i, 2, QtWidgets.QTableWidgetItem(str(team_list[i].matches_lost)))
+            self.TablaGeneral.setItem(i, 3, QtWidgets.QTableWidgetItem(str(team_list[i].tied_matches)))
+            self.TablaGeneral.setItem(i, 4, QtWidgets.QTableWidgetItem(str(team_list[i].matches_won)))
+            self.TablaGeneral.setItem(i, 5, QtWidgets.QTableWidgetItem(str(team_list[i].goals)))
+            self.TablaGeneral.setItem(i, 6, QtWidgets.QTableWidgetItem(str(team_list[i].points)))
+
+    def start_season(self):
+        start_season()
+        self.load_positions_table()
+        self.successful_message_dialog()
+
+    def end_soccer_day(self):
+        soccer_day_number = int(self.NumJornada.text())
+        end_soccer_day(soccer_day_number)
+        self.load_positions_table()
+        self.successful_message_dialog()
+
